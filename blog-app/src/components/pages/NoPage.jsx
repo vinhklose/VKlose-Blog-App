@@ -2,6 +2,6 @@ import React from "react";
 
 export default function NoPage() {
     return (
-        <div>Home</div>
+        <div>No Page</div>
     )
 }

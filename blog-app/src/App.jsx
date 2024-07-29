@@ -11,10 +11,12 @@ import NoPage from "./components/pages/NoPage";
 import AdminLogin from "./components/pages/admin/AdminLogin";
 // import CreateBlog from "./components/pages/admin/createBlog";
 import Dashboard from "./components/pages/admin/Dashboard";
+import {Toaster} from "react-hot-toast";
+import MyState from "./components/context api/myState";
 
 export default function App() {
   return (
-    <div >
+    <MyState>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,7 +27,8 @@ export default function App() {
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
+        <Toaster />
       </Router>
-    </div>
+    </MyState>
   );
 }
