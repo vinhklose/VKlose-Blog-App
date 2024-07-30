@@ -13,22 +13,32 @@ import AdminLogin from "./components/pages/admin/AdminLogin";
 import Dashboard from "./components/pages/admin/Dashboard";
 import {Toaster} from "react-hot-toast";
 import MyState from "./components/context api/myState";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
 
 export default function App() {
   return (
-    <MyState>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element ={<Blog />} />
-          <Route path="/allblogs" element={<AllBlogs />} />
-          <Route path="/bloginfo/:id" element={<BlogInfo />} />
-          <Route path="/*" element={<NoPage />} />
-          <Route path="/adminlogin" element={<AdminLogin />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-        <Toaster />
-      </Router>
-    </MyState>
+    <div className="min-h-svh flex flex-column text-center">
+      
+      <MyState>
+        <Header />  
+        <div className="flex">
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element ={<Blog />} />
+              <Route path="/allblogs" element={<AllBlogs />} />
+              <Route path="/bloginfo/:id" element={<BlogInfo />} />
+              <Route path="/*" element={<NoPage />} />
+              <Route path="/adminlogin" element={<AdminLogin />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+            <Toaster />
+          </Router>
+        </div>
+        <Footer />
+      </MyState>
+      
+    </div>
   );
 }
